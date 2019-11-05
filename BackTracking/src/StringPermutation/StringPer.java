@@ -21,16 +21,12 @@ public  class StringPer
   	 	 	return ;
          }
         
-         Permutation(count+1,arr);
-         int add=1;
-         while(count+add<arr.length)
-         	 {
-               swap(count,count+add,arr);
-         	   Permutation(count+1,arr);
-         	   swap(count,count+add,arr);
-         	   add++;
-         	 }
-
+        for(int i=count ;i<arr.length;i++)
+        {
+        	swap(i,count,arr);
+        	Permutation(count+1, arr);
+        	swap(i,count,arr);
+        }
   	 }
 
   	 public static void swap(int x,int y,char arr[])
